@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Reverse dictionary</title>
+<style class="anchorjs"></style><style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script type="text/javascript" async="" src="./index_files/analytics.js.descargar"></script><script type="text/javascript" async="" src="./index_files/js"></script><script src="./index_files/clipboard.min.js.descargar"></script>
+<script src="./index_files/quarto.js.descargar"></script>
+<script src="./index_files/popper.min.js.descargar"></script>
+<script src="./index_files/tippy.umd.min.js.descargar"></script>
+<script src="./index_files/anchor.min.js.descargar"></script>
+<link href="./index_files/tippy.css" rel="stylesheet">
+<link href="./index_files/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="./index_files/bootstrap.min.js.descargar"></script>
+<link href="./index_files/bootstrap-icons.css" rel="stylesheet">
+<link href="./index_files/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<script type="module" crossorigin="" src="./index_files/index-1d65707a.js.descargar"></script><link rel="stylesheet" href="./index_files/index-f2292b12.css"><link rel="stylesheet" href="./index_files/theme.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Blocks-c9e1499d.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Button-f155035a.js"><link rel="stylesheet" href="./index_files/Button-9b719f62.css"><link rel="stylesheet" href="./index_files/Blocks-f08d137e.css"><link rel="stylesheet" href="./index_files/css2"><link rel="stylesheet" href="./index_files/css2(1)"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-21b530d6.js"><link rel="modulepreload" as="script" crossorigin="" href="./index_files/index-1d65707a.js.descargar"><link rel="stylesheet" href="./index_files/index-edf307d2.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-390bcf9f.js"><link rel="stylesheet" href="./index_files/index-93c91554.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-ff7efb6d.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Column-6c43afc7.js"><link rel="stylesheet" href="./index_files/Column-2853eb31.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-6a563d90.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Textbox-1f11d244.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/BlockTitle-dee077e8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Info-7c6961ef.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Copy-9f1657c4.js"><link rel="stylesheet" href="./index_files/ColorPicker-5063dbc4.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-5a08489b.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Form-cd229de0.js"><link rel="stylesheet" href="./index_files/Form-3812b7f1.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-3cb0bda2.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-3c29bea1.js"><link rel="stylesheet" href="./index_files/index-329f8260.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/index-942e8f2b.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Image-1cf93ae5.js"><link rel="stylesheet" href="./index_files/Image-003ee87c.css"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/csv-b0b7514a.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/dsv-576afacd.js"><link rel="modulepreload" as="script" crossorigin="" href="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/assets/Model3D-1511e3cc.js"><link rel="stylesheet" href="./index_files/Model3D-98fc2b2c.css"><link rel="stylesheet" href="./index_files/index-322e8a8e.css"><script async="" defer="" src="./index_files/js(1)"></script> <script>window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "UA-156449732-1");</script></head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reverse dictionary</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="diccionario-español-inverso-parte-1-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="diccionario-español-inverso-parte-1-embeddings">Diccionario español inverso parte 1: Embeddings<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#diccionario-espa%C3%B1ol-inverso-parte-1-embeddings" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>La idea es poner una frase que vagamente se parezca a la palabra que te quieres acordar, y ver qué sugerencias te da el modelo. Me pasa relativamente seguido y googlear a la mala generalmente no da buenos resultados. Un diccionario inverso (reverso?) es justamente uno donde a partir de una definición se obtiene la palabra que mas se acerca a esa definición. Ahora con el boom de los LLM (large language models) supuse que sería más fácil que cuando quería algo asi hace tiempo. Como suele pasar eso si, los recursos en español estan rezagados respecto al ingles y por lo mismo construir algo asi no es tan directo.</p>
+<p>En esta primera parte voy armar la versión mas simple es con embeddings. A quién le interese la explicación y la dificultad ridícula de armar esta demo, y por qué les tira error con algunas cosas puede leerlo mas abajo. Si no, puede jugar un poco con la app a ver que le sale, y leer un poco sobre los ejemplos que puse, con sus variados resultados. Al más interesado puede ver el notebook con el codigo acá</p>
+<script type="module" src="./index_files/gradio.js.descargar"></script>
+<p><gradio-app src="https://ilde-reverse-dictionary.hf.space"><div class="gradio-container gradio-container-3-37-0 svelte-1kyws56 embed-container" style="min-height: initial; background: var(--body-background-fill);"><div class="main svelte-1kyws56">  <div class="wrap svelte-1ax1toq" style="min-height: auto;"><div class="contain"><div id="component-2" class="svelte-vt1mxs gap" style="min-width: min(0px, 100%);"><div id="component-3" class="block svelte-90oupt padded hide-container" style="border-style: solid; overflow: visible; min-width: min(0px, 100%); border-width: var(--block-border-width);"><div class="wrap center full svelte-zlszon hide" style="position: absolute; padding: 0px;"></div> <div class="svelte-1ed2p3z"><div id="component-3" class="prose  svelte-1yrv54" data-testid="markdown" dir="ltr"><h1 style="text-align: center; margin-bottom: 1rem">Diccionario inverso en español</h1></div></div></div><div id="component-4" class="block svelte-90oupt padded hide-container" style="border-style: solid; overflow: visible; min-width: min(0px, 100%); border-width: var(--block-border-width);"><div class="wrap center full svelte-zlszon hide" style="position: absolute; padding: 0px;"></div> <div class="svelte-1ed2p3z"><div id="component-4" class="prose  svelte-1yrv54" data-testid="markdown" dir="ltr">Un diccionario inverso utilizando embeddings Word2Vec de SBWCA y filtrando palabras de Wikcionario. Creado como demo para Gradio y HuggingFace Spaces.</div></div></div><div id="component-5" class="svelte-15lo0d8 unequal-height"><div id="component-6" class="svelte-vt1mxs gap panel" style="flex-grow: 1; min-width: min(320px, 100%);"><div id="component-7" class="svelte-vt1mxs gap" style="flex-grow: 1; min-width: min(320px, 100%);"><div class="form svelte-sfqy0y" style="flex-grow: 0; min-width: min(0px, 100%);"><div id="component-0" class="block svelte-90oupt padded" style="border-style: solid; overflow: hidden; min-width: min(160px, 100%); border-width: var(--block-border-width);"> <label class="svelte-1kcgrqr container"><span data-testid="block-info" class="svelte-1gfkn6j">definicion</span>   <textarea data-testid="textbox" class="scroll-hide svelte-1kcgrqr" dir="ltr" placeholder="Enter your text here..." rows="5" style="overflow-y: scroll; height: 126px;"></textarea></label></div></div></div><div id="component-9" class="svelte-15lo0d8 stretch"><button class="lg secondary  svelte-1e89no8" id="component-10">Limpiar</button><button class="lg primary  svelte-1e89no8" id="component-11">Enviar</button></div></div><div id="component-12" class="svelte-vt1mxs gap panel" style="flex-grow: 1; min-width: min(320px, 100%);"><div id="component-1" class="block svelte-90oupt padded hide-container" style="border-style: solid; overflow: visible; min-width: min(0px, 100%); border-width: var(--block-border-width);"><div class="wrap center full svelte-zlszon hide" style="position: absolute; padding: 0px;"></div> <div class="svelte-1ed2p3z"><div class="prose  svelte-1ybaih5" id="component-1"></div></div></div><div id="component-13" class="svelte-15lo0d8 stretch"></div></div></div><div id="component-14" class="block svelte-90oupt hide-container" style="border-style: solid; overflow: hidden; min-width: min(160px, 100%); border-width: var(--block-border-width);"><div class="label svelte-13hsdno"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" class="svelte-13hsdno"><path fill="currentColor" d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"></path></svg> Examples</div> <div class="gallery svelte-13hsdno"><button class="gallery-item svelte-13hsdno"><div class="svelte-1viwdyg gallery" style="position: relative; --local-text-width: 200px; white-space: unset;">angustia porque se te olvido algo<iframe style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; border: 0; opacity: 0; pointer-events: none; z-index: -1;" aria-hidden="true" tabindex="-1" src="./index_files/saved_resource.html"></iframe></div> </button></div> </div></div></div> </div>  <div class="toast-wrap svelte-pu0yf1"></div></div> </div></gradio-app></p>
+</section>
+<section id="ejemplos" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplos">Ejemplos<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplos" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>Igual para que tengan sentido los ejemplos, una explicación corta de los embeddings: Los embeddings de palabras son una lista de números que capturan el significado de las palabras de forma que los computadores pueden entender. Como son números, permite realizar operaciones matemáticas para determinar similitud (distancia) y por tanto ver qué palabras se parecen más, o menos, a otras.</p>
+<section id="ejemplo-0-actor-mujer" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-0-actor-mujer">Ejemplo 0: “actor mujer”<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplo-0-actor-mujer" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h5>
+<p>Variación del ejemplo clásico para los embeddings (rey + mujer). Como es de esperarse, te sugiere actriz.</p>
+</section>
+<section id="ejemplo-1-tardanza-o-lentitud-con-que-se-hace-algo" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-1-tardanza-o-lentitud-con-que-se-hace-algo">Ejemplo 1: ‘tardanza o lentitud con que se hace algo’<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplo-1-tardanza-o-lentitud-con-que-se-hace-algo" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h5>
+<p>En este caso funciona relativamente bien: retraso, celeridad, otras formas de tardanza</p>
+</section>
+<section id="ejemplo-2-miedo-a-las-alturas" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-2-miedo-a-las-alturas">Ejemplo 2: ‘miedo a las alturas’<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplo-2-miedo-a-las-alturas" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h5>
+<p>Verdaderamente esperaba ver vértigo, pero resulta que en verdad la palabra correcta es acrofobia. Si bien no es la primera sugerencia, aparece en la lista asi queeeeee bien igual.</p>
+</section>
+<section id="ejemplo-3-vehiculo-que-anda-bajo-el-agua" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-3-vehiculo-que-anda-bajo-el-agua">Ejemplo 3: ‘vehiculo que anda bajo el agua’<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplo-3-vehiculo-que-anda-bajo-el-agua" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h5>
+<p>La idea era que saliera submarino. Chistoso que la sugerencia principal sea desbarrancada. Claramente el vehiculo no deberia estar bajo el agua. Falló pero igual le doy puntos por el valor cómico</p>
+</section>
+<section id="ejemplo-4-grupo-de-lobos-que-andan-juntos" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-4-grupo-de-lobos-que-andan-juntos">Ejemplo 4: ‘grupo de lobos que andan juntos’<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#ejemplo-4-grupo-de-lobos-que-andan-juntos" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h5>
+<p>Aquí falló con escándalo. Esperaba que saliera manada o algo por el estilo pero salió albertosaurio que ni sabía si era un dinosaurio real o no. Tiene sentido en todo caso, por como funcionan los embeddings. Las palabras tienen una sola lista de números asociadas a cada una (un significado) siendo que en realidad pueden tener múltiples significados de acuerdo al contexto. Grupo y andan puede ser cualquier cosa, y se encuentran ‘cercanas’ a otros conceptos más literales. De hecho, si uno pone ‘rebaño de lobos’ efectivamente la primera sugerencia es manada (primero probé cardumen de lobos, no funcionó jeje).</p>
+</section>
+</section>
+<section id="eli5-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="eli5-embeddings">ELI5 Embeddings<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#eli5-embeddings" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>Imagina que tienes una cesta de frutas como manzanas, plátanos y naranjas, y quieres describir cada una sin usar sus nombres. Podrías decir que una manzana es roja, crujiente y dulce. Un plátano podría ser amarillo, suave y también dulce. Una naranja podría ser naranja, jugosa y un poco ácida.</p>
+<p>En este ejemplo, las palabras rojo, crujiente, dulce, amarillo, suave, ácido y jugoso pueden servir como características para describir cada fruta. Cada una de estas características puede considerarse una dimensión, como las dimensiones X, Y y Z en el espacio físico que te rodea.</p>
+<p>Los embeddings de palabras en aprendizaje automático sirven para un propósito similar. Son una forma de representar palabras como listas de números, donde cada número es como una de esas características o dimensiones para las frutas. Por ejemplo, la palabra “rey” podría representarse por una lista de números como [0.2, -0.4, 0.5, …, 0.1], donde cada número captura algún aspecto de lo que significa la palabra “rey”, como su aspecto de realeza, su género, etc.</p>
+<p>Estas listas de números suelen ser bastante largas para capturar los matices en el significado de una palabra; podrían tener cientos de dimensiones. Cuando las palabras tienen significados similares o se usan en contextos similares, sus listas de números se parecerán entre sí cuando realices operaciones matemáticas con ellas. Entonces, por ejemplo, la lista de números para “reina” podría parecerse mucho a “rey”, pero ser muy diferente de “manzana”.</p>
+<section id="mejoras-varias-posibles" class="level4">
+<h4 class="anchored" data-anchor-id="mejoras-varias-posibles">Mejoras varias posibles<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#mejoras-varias-posibles" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+<p>Estos números se estiman como consecuencia usualmente secundaria de entrenar un modelo que aprende a predecir la palabra que corresponde luego de una secuencia, o la palabra correspondiente a una bolsa de palabras ignorando la secuencia. Es el caso de los embeddings que usé, por eso esta suma/resta de significados de palabras de una “definición” para ver que palabra se parece en realidad no tendría por qué funcionar tan bien. Hay varias mejoras posibles en el modelo y en el proceso:</p>
+<ul>
+<li>Usar las definiciones de palabras: Debería poder usar los embeddings para adaptar la tarea definicion -&gt; palabra utilizando datos reales de un diccionario. De hecho este fue uno de los principales problemas porque la base de embeddings era bastante gigante, porque contenia una cantidad no menor de palabras relacionadas a lugares/nombres/otros que no me sirven de nada para esta herramienta. Queria filtrarla por un listado de palabras de diccionario pero info abierta hay poco. Terminé usando Wikcionario que es la única que encontré realmente opensource, pero fué un webeo y además no está tan completa y tiene harto relleno.</li>
+<li>Múltiples significados de palabras: El contexto al hacerlo de esta forma se pierde y por lo tanto encontrar alguna manera de tener vectores múltiples puede ser forma de mejorar el “modelo”.</li>
+<li>Usar algún LLM: Ahora liberaron llama2 finetuneada en español (hablando chino) por lo que seguramente se podría utilizar para adaptarlo a este problema.</li>
+</ul>
+</section>
+<section id="falló-la-app" class="level4">
+<h4 class="anchored" data-anchor-id="falló-la-app">Falló la app?<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="file:///C:/Ilde/fastai/reverse_dictionary/reverse_dictionary_spa/reverse_dictionary_quarto.html#fall%C3%B3-la-app" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+<ul>
+<li>Por lo que decia del filtro de la base de embeddings utilizando un diccionario de dudosa procedencia, hay palabras que no existen en el modelo y por lo tanto puede tirar error</li>
+<li>También si incluyeron cualquier cosa que no sea palabras separadas por UN espacio, podría fallar. Por ser una demo no le puse mucho cariño a la sanitización del texto que se come la aplicación</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
